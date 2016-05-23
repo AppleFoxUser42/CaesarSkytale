@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Caesar & Skytale</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="caesar-encrypt.js"></script>
+    <script src="caesar-decrypt.js"></script>
+    <script src="vigenere-encrypt.js"></script>
+    <script src="vigenere-decrypt.js"></script>
+</head>
+    <body>
+        <div class="container">
+            <h2>Encryption Thingy</h2>
+            
+                <div class="form-group">
+                <label for="t2e">Text to encrypt</label>
+                    <textarea class="form-control" id="t2e" maxlength="200" placeholder="Max. 200 Chars"></textarea>
+                    </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="caesar-shift">Caesar Shift</label>
+                        <input class="form-control" id="caesar-shift" type="text" pattern="[a-zA-Z]|[0-9]{1,2}">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn" id="cencrypt-button" onclick="caesarenc();">Encrypt</button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="vigenere-shift">Skytale Shift</label>
+                        <input class="form-control" id="vigenere-shift" type="number" min="0" max="25">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn" id="sencrypt-button" onclick="skytaleenc();">Encrypt</button>
+                    </div>
+                </div>
+                
+            
+            
+                <div class="col-md-6">
+                <div class="form-group">
+                <label for="ct2d">Caesar-Text to decrypt</label>
+                    <textarea class="form-control" id="ct2d" maxlength=200 placeholder="Max. 200 Chars"></textarea>
+                </div>
+                <div class="form-group">
+               
+                    
+                    <button class="btn" id="direct-decrypt-button-casear" onclick="caesardec();">Direct Decrypt</button>
+                    
+                </div>
+                </div>
+                <div class="col-md-6">
+                <div class="form-group">
+                    <label for="vt2d">Skytale-Text to decrypt</label>
+                    <textarea class="form-control" id="vt2d" maxlength=200 placeholder="Max. 200 Chars"></textarea>
+                    </div>
+                    <div class="form-group">
+                    <button class="btn" id="direct-decrypt-button-vigenere">Direct Decrypt</button>
+                    </div>
+                </div>
+          
+                <div class="form-group">
+                <button class="btn" id="autodecrypt">Autodecrypt</button>
+                    </div>
+            
+        </div>
+    </body>
+</html>
