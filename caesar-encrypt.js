@@ -17,9 +17,6 @@ var caesarenc =  function () {
     var text = document.getElementById("t2e").value;
     var shift = document.getElementById("caesar-shift").value;
     
-    
-    
-    
     var result = encrypt(text, shift);
     document.getElementById("ct2d").value = result;
     
