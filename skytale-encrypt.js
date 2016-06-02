@@ -1,28 +1,23 @@
-var sencrypt = function (text, rows) {
-    var result = [];
-    
-    var charsInRow = Math.ceil(text.length / rows);
-            for (var i = 0; i < charsInRow; i++) {
-                for (var j = i; true; j += charsInRow) {
-                    if (text[j] === undefined) {
-                        break;
-                    } else {
-                        result += text[j];
-                    }
-                }
+"use strict";
+
+let sencrypt = function(text, rows){
+    //var rows = 4;
+    let WLENGTH = text.length;
+    let target = "";
+    for(var j=0;j<=rows;j++){
+        for(var i=0;i<WLENGTH;i++){
+            if(i % rows == j){
+                target += text[i];
             }
-    console.log(JSON.stringify(result));
-    return result;
-};
-var skytaleenc = function () {
-    var text = document.getElementById("t2e").value;
-    var shift = document.getElementById("skytale-shift").value;
-    var result = sencrypt(text, shift);
-    document.getElementById("st2d").value = result;
+        }
+    }
+    
+    return target;
 };
 
-var sdecrypt = function (text, shift) {
-    for(var i=0;i<text.length;i++){
-        
-    }
-}
+let skytaleenc = function () {
+    let text = document.getElementById("t2e").value;
+    let shift = document.getElementById("skytale-shift").value;
+    let result = sencrypt(text, shift);
+    document.getElementById("st2d").value = result;
+};

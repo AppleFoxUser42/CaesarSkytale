@@ -1,9 +1,10 @@
 "use strict";
 var encrypt = function (text, shift) {
    var result = "";
+   var asciibegin = 33;
+   var asciiend = 128;
     for (var i = 0; i < text.length; i++) {
         var currCharCode = text.charAt(i).charCodeAt(0);
-        
         var shiftedCharCode = parseInt(currCharCode) + parseInt(shift);
         
         var shiftedChar = String.fromCharCode(shiftedCharCode);

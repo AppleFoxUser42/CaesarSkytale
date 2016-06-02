@@ -1,0 +1,45 @@
+#!/usr/bin/osascript -l JavaScript
+var testword = "012345678";
+
+var encrypt= function(){
+var shift = 4;
+var WLENGTH = testword.length;
+var target = "";
+for(j=0;j<=shift-1;j++){
+for(i=0;i<WLENGTH;i++){
+if(i % shift == j){
+target += testword[i];
+}
+}
+}
+
+console.log("\""+testword+"\" encrypted is: "+target);
+return target;
+}
+
+var sdecrypt = function(text, shift){
+    //var shift=4;
+    var WLENGTH = target.length;
+    console.log("WLENGTH="+WLENGTH);
+    var decrypted = "";
+    var index = 0;
+    var lastUsed;
+    
+    for(i=0;i<shift;i++){
+    for(j=i;j<WLENGTH;j+shift){
+    index=lastUsed+1;
+    if(j<WLENGTH || index<WLENGTH){
+       console.log("Current Char: "+text[index]);
+       decrypted[j]=text[index];
+       index++;
+       lastUsed=index;
+       }
+     else{break;}
+    }
+    }
+    console.log("\""+target+"\" decrypted is: "+decrypted);
+    return decrypted;
+}
+
+var target = encrypt();
+var decrypted = sdecrypt(target, 4);
