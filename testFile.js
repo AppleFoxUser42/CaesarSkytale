@@ -26,7 +26,7 @@ let sdecrypt = function(text, shift){
     if((j<WLENGTH || index<WLENGTH)){
         
        decrypted[j]=text[index];
-       //console.log("Writing text["+index+"]=\'"+text[index]+"\' to decrypted["+j+"]. Resulting in \'"+decrypted+"\'");
+       console.log("Writing text["+index+"]=\'"+text[index]+"\' to decrypted["+j+"]. Resulting in \'"+decrypted+"\'");
        index++;
        }
      else{break;}
