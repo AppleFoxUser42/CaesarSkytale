@@ -17,6 +17,7 @@ var sencrypt = function(text, rows){
 let sdecrypt = function(text, shift){
     let WLENGTH = text.length;
     let decrypted = [];
+    shift = parseInt(shift);
     
     //Help-variable for addressing to be set char.
     let index = 0;
