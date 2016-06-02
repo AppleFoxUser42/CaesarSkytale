@@ -6,6 +6,7 @@ var sencrypt = function(text, rows){
         for(var i=0;i<WLENGTH;i++){
             if(i % rows == j){
                 target += text[i];
+                console.log("Writing text["+i+"]=\'"+text[i]+"\' to target=\'"+target+"\'.");
             }
         }
     }
@@ -25,7 +26,7 @@ let sdecrypt = function(text, shift){
     if((j<WLENGTH || index<WLENGTH)){
         
        decrypted[j]=text[index];
-       //console.log("Writing text["+index+"]="+text[index]+"to decrypted["+j+"]. Resulting in "+decrypted);
+       //console.log("Writing text["+index+"]=\'"+text[index]+"\' to decrypted["+j+"]. Resulting in \'"+decrypted+"\'");
        index++;
        }
      else{break;}
@@ -38,10 +39,9 @@ let sdecrypt = function(text, shift){
     return result;
 };
 
-let testString = "Hello Bob. My Name is Paul.";
+let testString = "Hello Bob";
 let testShiftEn = 4;
 let testShiftDe = 4;
-
 
 let encrypted = sencrypt(testString, testShiftEn);
 console.log("\""+testString+"\" has been encrypted to \""+encrypted+"\" using shift "+testShiftEn);
